@@ -1,9 +1,10 @@
+import logger from "../middleware/winston.js"
+
 const errorHandling = (err, req, res, next) => {
-    console.log("err err ")
-    console.log("err err ")
-    console.log([err.message])
+    const message = err.message.split(' - ')[1]
+    logger.error(err)
     res.status(500).json({
-        errors: [err.message],
+        errors: message,
         message: "Internal server error!",
         data: null,
     })

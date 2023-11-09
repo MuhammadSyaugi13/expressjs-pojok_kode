@@ -1,4 +1,5 @@
 import express from "express"
+import "./winston.js"
 import route from "../router/index.js"
 
 const appMiddleware = express()

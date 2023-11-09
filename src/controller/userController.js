@@ -25,9 +25,8 @@ const setUser = async (req, res, next) => {
             }
         })
     } catch (error) {
-        console.log(error.message)
         // next(new Error("controllers/userController.js:setUser: "+error.message))
-        next(error)
+        next(new Error("controllers/userController.js:setUser - "+error.message))
     }
 }
 

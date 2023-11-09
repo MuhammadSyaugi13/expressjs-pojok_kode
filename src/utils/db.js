@@ -10,8 +10,9 @@ const sequelize = new Sequelize(
     port: process.env.DB_PORT,
     dialect: process.env.DB_DIALECT,
     logging:
-      process.env.NODE_ENV === "development"
-        ? (...msg) => console.log(msg)
+      process.env.NODE_ENV === "dev"
+        // ? (...msg) => console.log(msg)
+        ? true
         : false,
     dialectOptions: {
       requestTimeout: 30000,
